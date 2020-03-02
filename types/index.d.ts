@@ -980,13 +980,15 @@ export interface Configuration {
 
     mTLS?: {
       enabled?: boolean;
-      ack?: '15-rc.1' | 16 | 17 | 'draft-17';
       certificateBoundAccessTokens?: boolean;
       selfSignedTlsClientAuth?: boolean;
       tlsClientAuth?: boolean;
       getCertificate?: (ctx: KoaContextWithOIDC) => string;
       certificateAuthorized?: (ctx: KoaContextWithOIDC) => boolean;
       certificateSubjectMatches?: (ctx: KoaContextWithOIDC, property: TLSClientAuthProperty, expected: string) => boolean;
+
+      // TODO: remove in 7.x
+      ack?: '15-rc.1' | 16 | 17 | 'draft-17';
     };
 
     resourceIndicators?: {
